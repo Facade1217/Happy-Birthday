@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 20th Birthday! | For My Amazing Girlfriend</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffebeb 100%);
+            color: #5a3e36;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .birthday-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 100 100'%3E%3Ccircle fill='%23ffffff' opacity='0.2' cx='50' cy='50' r='5'/%3E%3C/svg%3E");
+            z-index: -1;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            color: #e84393;
+            text-shadow: 3px 3px 0px rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        .age-badge {
+            display: inline-block;
+            background: #e84393;
+            color: white;
+            font-size: 2.5rem;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 50%;
+            margin: 20px auto;
+            transform: rotate(10deg);
+            box-shadow: 0 5px 15px rgba(232, 67, 147, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            margin: 10px 0 30px;
+            color: #d63031;
+        }
+
+        .message-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+            border-left: 5px solid #e84393;
+        }
+
+        .message-section::before {
+            content: """"";
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 100px;
+            color: rgba(232, 67, 147, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .interests-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .interest-card {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-header {
+            padding: 25px;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .cooking .card-header {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        }
+
+        .books .card-header {
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+        }
+
+        .card-content {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .cooking .icon {
+            color: #ff7675;
+        }
+
+        .books .icon {
+            color: #6c5ce7;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 50px 0;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .wishes {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .wishes h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            color: #fff;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .wish-list {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .wish-list li {
+            margin: 15px 0;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .wish-list li::before {
+            content: "❤";
+            position: absolute;
+            left: 0;
+            color: #e84393;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(232, 67, 147, 0.4);
+            animation: float 8s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1) rotate(10deg); }
+            50% { transform: scale(1.1) rotate(10deg); }
+            100% { transform: scale(1) rotate(10deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            .subtitle {
+                font-size: 1.4rem;
+            }
+            .age-badge {
+                width: 80px;
+                height: 80px;
+                line-height: 80px;
+                font-size: 2rem;
+            }
+            .message-section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="hearts" id="hearts"></div>
+
+    <div class="birthday-container">
+        <header>
+            <h1>Happy Birthday!</h1>
+            <div class="age-badge">20</div>
+            <p class="subtitle">To the most amazing girlfriend in the world</p>
+            <p>Today is all about celebrating you and the wonderful person you are!</p>
+        </header>
+
+        <section class="message-section">
+            <h2>My Dearest Love,</h2>
+            <p>On this special day, I want to celebrate the incredible woman you are becoming. Twenty years of bringing joy, laughter, and love into this world - and I'm so grateful to be part of your journey.</p>
+            
+            <p>I admire your passion for cooking, how you create magic in the kitchen turning simple ingredients into delicious masterpieces. And your love for books - the way you get lost in stories and share your favorite passages with me - it's one of the many things that make you so special.</p>
+            
+            <p>Today, I wish for you a year filled with new recipes to master, new stories to discover, and countless moments of happiness. May your 20th year be as wonderful, bright, and beautiful as you are.</p>
+            
+            <p>With all my love,</p>
+            <p style="font-family: 'Dancing Script', cursive; font-size: 1.8rem; margin-top: 20px;">Your Loving Boyfriend</p>
+        </section>
+
+        <section class="interests-section">
+            <div class="interest-card cooking">
+                <div class="card-header">
+                    <h3>The Chef</h3>
+                </div>
+                <div class="card-content">
+                    <div class="icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <p>Your passion for cooking inspires me every day (not really). Whether you're cooking healthy food or the most random meals, your kitchen is where magic happens.</p>
+                    <p>I promise to always be your taste-tester and kitchen helper!</p>
+                </div>
+            </div>
+
+            <div class="interest-card books">
+                <div class="card-header">
+                    <h3>Your Books</h3>
+                </div>
+                <div class="card-content">
+                    <div class="icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <p>Your love for books takes you to countless worlds. Your bookshelf is a treasure trove of adventures.</p>
+                    <p>I look forward to many more days where you tell me about your weird books, where love is displayed by violence.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2025-08-08 at 00.25.19_41eacda5.jpg" alt="Baking">
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2025-08-08 at 00.15.41_671eb30d.jpg" alt="Remember this outing?">
+            </div>
+            <div class="gallery-item">
+                <img src="WhatsApp Image 2025-08-08 at 00.17.21_0a714c4f.jpg" alt="Remember the snow?">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Reading time">
+            </div>
+        </section>
+
+        <section class="wishes">
+            <h2>My Birthday Wishes For You</h2>
+            <div class="wish-list">
+                <ul>
+                    <li>A year filled with joy and laughter</li>
+                    <li>Success in all your culinary adventures</li>
+                    <li>Many captivating books that you can't put down</li>
+                    <li>Endless reasons to smile every single day</li>
+                    <li>New experiences that become cherished memories</li>
+                    <li>Good health and boundless energy</li>
+                    <li>All the love and happiness you deserve</li>
+                    <li>And me, always by your side</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>Made with ❤️ for the most special 20th birthday</p>
+            <p>© 2025 - A gift of love</p>
+        </footer>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            const heartCount = 50;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤';
+                heart.classList.add('heart');
+                
+                // Random properties
+                const size = Math.random() * 2 + 1;
+                const left = Math.random() * 100;
+                const duration = Math.random() * 10 + 5;
+                const delay = Math.random() * 5;
+                
+                heart.style.left = `${left}%`;
+                heart.style.fontSize = `${size}rem`;
+                heart.style.animationDuration = `${duration}s`;
+                heart.style.animationDelay = `${delay}s`;
+                
+                heartsContainer.appendChild(heart);
+            }
+        }
+        
+        // Initialize when page loads
+        window.addEventListener('load', createHearts);
+    </script>
+</body>
+</html>
